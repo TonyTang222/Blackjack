@@ -41,9 +41,9 @@ class Deck:
     
 class Hand:
     def __init__(self):
-        self.cards = []  # start with an empty list as we did in the Deck class
+        self.cards = []  
         self.value = 0   # start with zero value
-        self.aces = 0    # add an attribute to keep track of aces
+        self.aces = 0    
     
     def add_card(self,card):
         self.cards.append(card)
@@ -60,7 +60,7 @@ class Hand:
 class Chips:
     
     def __init__(self):
-        self.total = 100  # This can be set to a default value or supplied by a user input
+        self.total = 100  
         self.bet = 0
         
     def win_bet(self):
@@ -90,7 +90,7 @@ def hit(deck,hand):
     
     
 def hit_or_stand(deck,hand):
-    global playing  # to control an upcoming while loop
+    global playing  
     while True:
         x=input('You want hit or stand, H or S?').upper()
         if x.upper()=='H':
@@ -154,8 +154,6 @@ while True:
     dealer_hand.add_card(deck.deal())    
     # Set up the Player's chips
     player_chips=Chips()
-    
-    # Prompt the Player for their bet
     take_bet(player_chips)
     
     # Show cards (but keep one dealer card hidden)
@@ -183,7 +181,6 @@ while True:
     
         # Show all cards
         show_all(player_hand,dealer_hand)
-        # Run different winning scenarios
         
         if dealer_hand.value > 21:
             dealer_busts(player_hand,dealer_hand,player_chips)
